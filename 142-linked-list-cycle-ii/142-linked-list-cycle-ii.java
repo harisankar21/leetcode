@@ -12,15 +12,15 @@
 public class Solution {
     public ListNode detectCycle(ListNode head) {
         ListNode temp=head;
-        Map<ListNode,ListNode> cMap= new HashMap<>();
+        Set<ListNode> cMap= new HashSet<>();
         int i=0;
         while(temp!=null){
             
-            if(cMap.get(temp)!=null){
-                return cMap.get(temp);
+            if(cMap.contains(temp)){
+                return temp;
             }
             else{
-                cMap.put(temp,temp);
+                cMap.add(temp);
             }
             temp=temp.next;
             ++i;
