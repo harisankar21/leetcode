@@ -8,18 +8,18 @@ class Solution {
             return anagrams;
         }
  
-        // sort each word on the list
-        // List<String> list = words.stream()
-        //         .map(s -> Stream.of(s.split("")).sorted()
-        //                 .collect(Collectors.joining()))
-        //         .collect(Collectors.toList());
-        List<String> list= new ArrayList<>();
-        for(String tmp:words){
-            char[] tmpArray=tmp.toCharArray();
-            Arrays.sort(tmpArray);
-            list.add(new String(tmpArray));
+        //sort each word on the list
+        List<String> list = words.stream()
+                .map(s -> Stream.of(s.split("")).sorted()
+                        .collect(Collectors.joining()))
+                .collect(Collectors.toList());
+//         List<String> list= new ArrayList<>();
+//         for(String tmp:words){
+//             char[] tmpArray=tmp.toCharArray();
+//             Arrays.sort(tmpArray);
+//             list.add(new String(tmpArray));
                 
-        }
+//         }
  
         // construct a map where the key is each sorted word,
         // and value is a list of indices where it is present
